@@ -1,12 +1,9 @@
 <resources>
-    <string name="app_name">bjDate</string>
-    <string name="Time_title_Houre">ساعت</string>
-    <string name="Time_title_min">دقیقه</string>
-    <string name="Time_title_sec">ثانیه</string>
-    <string name="Date_title_year">سال</string>
-    <string name="Date_title_month">ماه</string>
-    <string name="Date_title_week">هفته</string>
-    <string name="Date_title_day">روز</string>
-    <string name="Date">تاریخ</string>
-    <string name="Time">زمان</string>
+    <string name="Action_Cancel">انصراف</string>
+    <string name="Action_OK">OK</string>
+    <string name="Action_Yes">Yes</string>
+    <string name="Action_NO">No</string>
+    <string name="Title_Attention">Attention!</string>
+    <string name="Title_Error">Error!</string>
+    <string name="message_Incorrect_Format">The value entered is not in the proper format</string>
 </resources>

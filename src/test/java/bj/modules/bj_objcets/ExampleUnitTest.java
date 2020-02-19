@@ -1,4 +1,4 @@
-package bj.modules;
+package bj.modules.bj_objcets;
 
 import org.junit.Test;
 

@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../BJ Modules.iml" filepath="$PROJECT_DIR$/../BJ Modules.iml" />
       <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bjDate.iml" filepath="$PROJECT_DIR$/bjDate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../messageBox/messageBox.iml" filepath="$PROJECT_DIR$/../messageBox/messageBox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bjDate/bjDate.iml" filepath="$PROJECT_DIR$/../bjDate/bjDate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bjMessageBox.iml" filepath="$PROJECT_DIR$/bjMessageBox.iml" />
     </modules>
   </component>
 </project>

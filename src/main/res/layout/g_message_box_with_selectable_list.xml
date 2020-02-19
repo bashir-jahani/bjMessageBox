@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_corner5"
+    android:padding="5dp"
+    >
+    <TextView
+
+        android:id="@+id/GDA_TXV_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimaryDark"
+        android:gravity="start"
+        android:padding="2dp"
+        android:paddingStart="10dp"
+        android:text="Dialog Message Title"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/white" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="horizontal"
+        android:layout_weight="80"
+        android:layout_marginBottom="10dp"
+        >
+        <ImageView
+            android:id="@+id/GDA_Logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+
+            android:layout_margin="5dp"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_attention" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+
+                android:id="@+id/GDA_TXV_Message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="start"
+                android:padding="2dp"
+                android:text="Dialog Message"
+                android:textAlignment="viewStart"
+                android:textColor="@color/Color_Need_Help" />
+            <ListView
+                android:id="@+id/GDA_LV_List"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="70"
+                android:background="@drawable/border"
+                android:gravity="start"
+                android:padding="2dp"></ListView>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:minHeight="50dp"
+        android:padding="5dp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/GDA_BTN_Cancel"
+            style="@style/GGN_Buttons"
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:text="@string/Action_Cancel"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/GDA_BTN_OK"
+            style="@style/GGN_Buttons"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="50"
+            android:text="@string/Action_OK" />
+    </LinearLayout>
+</LinearLayout>

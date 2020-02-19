@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#d70000</color>
     <color name="colorPrimaryDark">#940002</color>
-    <color name="colorAccent">#118100</color>
+    <color name="Color_Need_Help">#730073</color>
+    <color name="Color_Dialog_FG_Dark">#000000</color>
+    <color name="white_overlay">#dedede</color>
 </resources>

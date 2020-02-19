@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="bj.modules.bj_objcets.bj_messageBox"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="@drawable/border_corner1"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/GIB_TXV_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="start"
+            android:padding="2dp"
+            android:text="Dialog Message Title"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/GIB_TXV_Message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="start"
+                    android:padding="2dp"
+                    android:text="Dialog Message"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/Color_Need_Help" />
+
+                <ImageView
+                    android:id="@+id/GIB_Logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="2dp"
+                    android:layout_margin="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_attention" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/GIB_EDT_Value"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="start"
+                android:padding="2dp"
+                android:textAlignment="viewStart"
+                android:hint="Value"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/GIB_BTN_Cancel"
+                style="@style/GGN_Buttons"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:text="@string/Action_Cancel" />
+
+            <Button
+                android:id="@+id/GIB_BTN_OK"
+                style="@style/GGN_Buttons"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:text="@string/Action_OK" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

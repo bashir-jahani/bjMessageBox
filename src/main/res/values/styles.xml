@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GGN_Buttons">
+        <item name="android:background">@drawable/gradian_utd_border_button</item>
+        <item name="android:foreground">@drawable/border_corner5</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+</resources>
