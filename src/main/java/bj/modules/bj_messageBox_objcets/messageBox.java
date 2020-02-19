@@ -1,4 +1,4 @@
-package bj.modules.bj_objcets;
+package bj.modules.bj_messageBox_objcets;
 
 
 import android.app.Dialog;
@@ -18,7 +18,7 @@ import androidx.annotation.StringRes;
 
 
 
-public class bj_messageBox extends Dialog {
+public class messageBox extends Dialog {
     TextView TXVMessage,TXVTitle;
     Button BTNOK,BTNCancel,BTNYes,BTNNo;
     ImageView IMGLogo;
@@ -27,7 +27,7 @@ public class bj_messageBox extends Dialog {
 
     Boolean mShowOK,  mShowCancel,  mShowYes,  mShowNO;
     public static Boolean result=false;
-    public bj_messageBox(Context context, Boolean ShowCancel, Boolean ShowOK, Boolean ShowYes, Boolean ShowNO) {
+    public messageBox(Context context, Boolean ShowCancel, Boolean ShowOK, Boolean ShowYes, Boolean ShowNO) {
         super(context);
         mContext=context;
         mShowOK=ShowOK;

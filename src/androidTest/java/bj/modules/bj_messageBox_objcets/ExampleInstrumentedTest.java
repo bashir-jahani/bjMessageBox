@@ -1,4 +1,4 @@
-package bj.modules.bj_objcets;
+package bj.modules.bj_messageBox_objcets;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
 		// Context of the app under test.
 		Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-		assertEquals("bj.modules.bj_messageBox.test", appContext.getPackageName());
+		assertEquals("bj.modules.messageBox.test", appContext.getPackageName());
 	}
 }

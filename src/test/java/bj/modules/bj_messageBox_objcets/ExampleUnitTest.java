@@ -1,4 +1,4 @@
-package bj.modules.bj_objcets;
+package bj.modules.bj_messageBox_objcets;
 
 import org.junit.Test;
 

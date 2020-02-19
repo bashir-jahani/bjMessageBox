@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="bj.modules.bj_objcets.bj_messageBox"
+    tools:context="bj.modules.bj_messageBox_objcets.messageBox"
 
     >
 

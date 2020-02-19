@@ -1,4 +1,4 @@
-package bj.modules.bj_objcets;
+package bj.modules.bj_messageBox_objcets;
 
 
 import android.app.Activity;
@@ -28,7 +28,7 @@ import bj.modules.bj_messageBox_classes;
 import bj.modules.bj_messageBox;
 
 
-public class bj_messageBoxWithSelectableList extends Dialog {
+public class messageBoxWithSelectableList extends Dialog {
     TextView TXVMessage,TXVTitle;
     ListView LVMyList;
     Button BTNOK,BTNCancel;
@@ -40,7 +40,7 @@ public class bj_messageBoxWithSelectableList extends Dialog {
     static ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> SelectedItems=new ArrayList<bj_messageBox_classes.BJSimpleListViewInfo>();
     Boolean EnableMultiSellect;
     public static Boolean result=false;
-    public bj_messageBoxWithSelectableList(Context context, Boolean EnableMultiSellect) {
+    public messageBoxWithSelectableList(Context context, Boolean EnableMultiSellect) {
         super(context);
         mContext=context;
         this.EnableMultiSellect=EnableMultiSellect;

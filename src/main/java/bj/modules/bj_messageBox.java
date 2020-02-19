@@ -19,9 +19,10 @@ import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
 
-import bj.modules.bj_objcets.bj_inputBox;
-import bj.modules.bj_objcets.bj_messageBoxWithSelectableList;
-import bj.modules.bj_objcets.R;
+import bj.modules.bj_messageBox_objcets.inputBox;
+import bj.modules.bj_messageBox_objcets.messageBoxWithSelectableList;
+import bj.modules.bj_messageBox_objcets.R;
+import bj.modules.bj_messageBox_objcets.messageBox;
 
 public class bj_messageBox {
 	public static @interface BJMessagesButtonKind {
@@ -115,11 +116,11 @@ public class bj_messageBox {
 		}
 
 
-		public static void messageBox(String Title, String Message, @BJMessagesButtonKind Integer ButtonsShowKind , Context   context, bj.modules.bj_objcets.bj_messageBox.OnDialogResultListener onDialogResultListener ){
-			bj.modules.bj_objcets.bj_messageBox Mdialog;
+		public static void messageBox(String Title, String Message, @BJMessagesButtonKind Integer ButtonsShowKind , Context   context, messageBox.OnDialogResultListener onDialogResultListener ){
+			messageBox Mdialog;
 			switch (ButtonsShowKind){
 				case 1:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -129,7 +130,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(Message);
 					return;
 				case 2:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,true,false,false);
+					Mdialog= new messageBox(context,true,true,false,false);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -139,7 +140,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(Message);
 					return;
 				case 3:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,false,true,true);
+					Mdialog= new messageBox(context,false,false,true,true);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -149,7 +150,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(Message);
 					return;
 				case 4:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,false,true,true);
+					Mdialog= new messageBox(context,true,false,true,true);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -159,7 +160,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(Message);
 					return;
 				default:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -178,9 +179,9 @@ public class bj_messageBox {
 		public static void messageBoxAsAttention(String AttentionMessage,Context context){
 			messageBox(context.getString(R.string.Title_Attention),AttentionMessage, BJMessagesButtonKind.Ok,context,null);
 		}
-		public static void messageBoxWithSelectableListView(String Title, String Message, @DrawableRes int LogoResourcesID, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, bj_messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
-			bj_messageBoxWithSelectableList Mdialog;
-			Mdialog= new bj_messageBoxWithSelectableList(context,EnableMultiSellect);
+		public static void messageBoxWithSelectableListView(String Title, String Message, @DrawableRes int LogoResourcesID, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
+			messageBoxWithSelectableList Mdialog;
+			Mdialog= new messageBoxWithSelectableList(context,EnableMultiSellect);
 			Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -191,9 +192,9 @@ public class bj_messageBox {
 			Mdialog.SetLogo(LogoResourcesID);
 			Mdialog.SetMessageBoxListViewItems(Items);
 		}
-		public static void messageBoxWithSelectableListView(String Title, String Message, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, bj_messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
-			bj_messageBoxWithSelectableList Mdialog;
-			Mdialog= new bj_messageBoxWithSelectableList(context,EnableMultiSellect);
+		public static void messageBoxWithSelectableListView(String Title, String Message, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
+			messageBoxWithSelectableList Mdialog;
+			Mdialog= new messageBoxWithSelectableList(context,EnableMultiSellect);
 			Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -203,11 +204,11 @@ public class bj_messageBox {
 			Mdialog.setMessage(Message);
 			Mdialog.SetMessageBoxListViewItems(Items);
 		}
-		public static void messageBox(@StringRes int TitleId, @StringRes int MessageId, @BJMessagesButtonKind Integer ButtonShowKind, Context context, bj.modules.bj_objcets.bj_messageBox.OnDialogResultListener onDialogResultListener ){
-			bj.modules.bj_objcets.bj_messageBox Mdialog;
+		public static void messageBox(@StringRes int TitleId, @StringRes int MessageId, @BJMessagesButtonKind Integer ButtonShowKind, Context context, messageBox.OnDialogResultListener onDialogResultListener ){
+			messageBox Mdialog;
 			switch (ButtonShowKind){
 				case 1:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -217,7 +218,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(MessageId);
 					return;
 				case 2:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,true,false,false);
+					Mdialog= new messageBox(context,true,true,false,false);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -227,7 +228,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(MessageId);
 					return;
 				case 3:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,false,true,true);
+					Mdialog= new messageBox(context,false,false,true,true);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -237,7 +238,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(MessageId);
 					return;
 				case 4:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,false,true,true);
+					Mdialog= new messageBox(context,true,false,true,true);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -247,7 +248,7 @@ public class bj_messageBox {
 					Mdialog.setMessage(MessageId);
 					return;
 				default:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -260,11 +261,11 @@ public class bj_messageBox {
 
 		}
 
-		public static void messageBox(String Title, String Message, @BJMessagesButtonKind Integer ButtonsShowKind , Context context, @DrawableRes int LogoResourcesID, bj.modules.bj_objcets.bj_messageBox.OnDialogResultListener onDialogResultListener ){
-			bj.modules.bj_objcets.bj_messageBox Mdialog;
+		public static void messageBox(String Title, String Message, @BJMessagesButtonKind Integer ButtonsShowKind , Context context, @DrawableRes int LogoResourcesID, messageBox.OnDialogResultListener onDialogResultListener ){
+			messageBox Mdialog;
 			switch (ButtonsShowKind){
 				case 1:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -275,7 +276,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				case 2:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,true,false,false);
+					Mdialog= new messageBox(context,true,true,false,false);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -286,7 +287,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				case 3:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,false,true,true);
+					Mdialog= new messageBox(context,false,false,true,true);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -297,7 +298,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				case 4:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,false,true,true);
+					Mdialog= new messageBox(context,true,false,true,true);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -308,7 +309,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				default:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -322,11 +323,11 @@ public class bj_messageBox {
 
 
 		}
-		public static void messageBox(@StringRes int TitleId, @StringRes int MessageId, @BJMessagesButtonKind Integer ButtonShowKind, @DrawableRes int LogoResourcesID, Context context, bj.modules.bj_objcets.bj_messageBox.OnDialogResultListener onDialogResultListener ){
-			bj.modules.bj_objcets.bj_messageBox Mdialog;
+		public static void messageBox(@StringRes int TitleId, @StringRes int MessageId, @BJMessagesButtonKind Integer ButtonShowKind, @DrawableRes int LogoResourcesID, Context context, messageBox.OnDialogResultListener onDialogResultListener ){
+			messageBox Mdialog;
 			switch (ButtonShowKind){
 				case 1:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -337,7 +338,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				case 2:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,true,false,false);
+					Mdialog= new messageBox(context,true,true,false,false);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -348,7 +349,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				case 3:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,false,true,true);
+					Mdialog= new messageBox(context,false,false,true,true);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -359,7 +360,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				case 4:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,true,false,true,true);
+					Mdialog= new messageBox(context,true,false,true,true);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -370,7 +371,7 @@ public class bj_messageBox {
 					Mdialog.SetLogo(LogoResourcesID);
 					return;
 				default:
-					Mdialog= new bj.modules.bj_objcets.bj_messageBox(context,false,true,false,false);
+					Mdialog= new messageBox(context,false,true,false,false);
 					Mdialog.setOnDismissListener(onDialogResultListener);
 
 
@@ -384,9 +385,9 @@ public class bj_messageBox {
 
 		}
 
-		public static void inputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType, Context context, bj_inputBox.OnDialogResultListener onDialogResultListener  ){
-			bj_inputBox Mdialog;
-			Mdialog= new bj_inputBox(context,inputType);
+		public static void inputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
+			inputBox Mdialog;
+			Mdialog= new inputBox(context,inputType);
 			Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -399,9 +400,9 @@ public class bj_messageBox {
 			return;
 
 		}
-		public static void inputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId,String DefaultValue, int inputType,  Context context, bj_inputBox.OnDialogResultListener onDialogResultListener ){
-			bj_inputBox Mdialog;
-			Mdialog= new bj_inputBox(context,inputType);
+		public static void inputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId,String DefaultValue, int inputType,  Context context, inputBox.OnDialogResultListener onDialogResultListener ){
+			inputBox Mdialog;
+			Mdialog= new inputBox(context,inputType);
 			Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -416,9 +417,9 @@ public class bj_messageBox {
 
 
 		}
-		public static void inputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType,@DrawableRes int LogoResourcesID, Context context, bj_inputBox.OnDialogResultListener onDialogResultListener  ){
-			bj_inputBox Mdialog;
-			Mdialog= new bj_inputBox(context,inputType);
+		public static void inputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType,@DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
+			inputBox Mdialog;
+			Mdialog= new inputBox(context,inputType);
 			Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -432,9 +433,9 @@ public class bj_messageBox {
 			return;
 
 		}
-		public static void inputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId, String DefaultValue, int inputType, @DrawableRes int LogoResourcesID, Context context, bj_inputBox.OnDialogResultListener onDialogResultListener ){
-			bj_inputBox Mdialog;
-			Mdialog= new bj_inputBox(context,inputType);
+		public static void inputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId, String DefaultValue, int inputType, @DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener ){
+			inputBox Mdialog;
+			Mdialog= new inputBox(context,inputType);
 			Mdialog.setOnDialogResultListener(onDialogResultListener);
 
 
@@ -452,4 +453,341 @@ public class bj_messageBox {
 		}
 
 	}
+
+	public static void MessageBox(String Title, String Message, @BJMessagesButtonKind Integer ButtonsShowKind , Context   context, messageBox.OnDialogResultListener onDialogResultListener ){
+		messageBox Mdialog;
+		switch (ButtonsShowKind){
+			case 1:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				return;
+			case 2:
+				Mdialog= new messageBox(context,true,true,false,false);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				return;
+			case 3:
+				Mdialog= new messageBox(context,false,false,true,true);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				return;
+			case 4:
+				Mdialog= new messageBox(context,true,false,true,true);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				return;
+			default:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+		}
+
+
+
+	}
+	public static void MessageBoxAsError(String ErrMessage,Context context){
+		MessageBox(context.getString(R.string.Title_Error),ErrMessage, BJMessagesButtonKind.Ok,context,null);
+	}
+	public static void MessageBoxAsAttention(String AttentionMessage,Context context){
+		MessageBox(context.getString(R.string.Title_Attention),AttentionMessage, BJMessagesButtonKind.Ok,context,null);
+	}
+	public static void MessageBoxWithSelectableListView(String Title, String Message, @DrawableRes int LogoResourcesID, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
+		messageBoxWithSelectableList Mdialog;
+		Mdialog= new messageBoxWithSelectableList(context,EnableMultiSellect);
+		Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+		Mdialog.show();
+		Mdialog.setTitle(Title);
+		Mdialog.setMessage(Message);
+		Mdialog.SetLogo(LogoResourcesID);
+		Mdialog.SetMessageBoxListViewItems(Items);
+	}
+	public static void MessageBoxWithSelectableListView(String Title, String Message, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
+		messageBoxWithSelectableList Mdialog;
+		Mdialog= new messageBoxWithSelectableList(context,EnableMultiSellect);
+		Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+		Mdialog.show();
+		Mdialog.setTitle(Title);
+		Mdialog.setMessage(Message);
+		Mdialog.SetMessageBoxListViewItems(Items);
+	}
+	public static void MessageBox(@StringRes int TitleId, @StringRes int MessageId, @BJMessagesButtonKind Integer ButtonShowKind, Context context, messageBox.OnDialogResultListener onDialogResultListener ){
+		messageBox Mdialog;
+		switch (ButtonShowKind){
+			case 1:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				return;
+			case 2:
+				Mdialog= new messageBox(context,true,true,false,false);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				return;
+			case 3:
+				Mdialog= new messageBox(context,false,false,true,true);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				return;
+			case 4:
+				Mdialog= new messageBox(context,true,false,true,true);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				return;
+			default:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+		}
+
+
+	}
+
+	public static void MessageBox(String Title, String Message, @BJMessagesButtonKind Integer ButtonsShowKind , Context context, @DrawableRes int LogoResourcesID, messageBox.OnDialogResultListener onDialogResultListener ){
+		messageBox Mdialog;
+		switch (ButtonsShowKind){
+			case 1:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			case 2:
+				Mdialog= new messageBox(context,true,true,false,false);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			case 3:
+				Mdialog= new messageBox(context,false,false,true,true);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			case 4:
+				Mdialog= new messageBox(context,true,false,true,true);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			default:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(Title);
+				Mdialog.setMessage(Message);
+				Mdialog.SetLogo(LogoResourcesID);
+		}
+
+
+
+	}
+	public static void MessageBox(@StringRes int TitleId, @StringRes int MessageId, @BJMessagesButtonKind Integer ButtonShowKind, @DrawableRes int LogoResourcesID, Context context, messageBox.OnDialogResultListener onDialogResultListener ){
+		messageBox Mdialog;
+		switch (ButtonShowKind){
+			case 1:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			case 2:
+				Mdialog= new messageBox(context,true,true,false,false);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			case 3:
+				Mdialog= new messageBox(context,false,false,true,true);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			case 4:
+				Mdialog= new messageBox(context,true,false,true,true);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				Mdialog.SetLogo(LogoResourcesID);
+				return;
+			default:
+				Mdialog= new messageBox(context,false,true,false,false);
+				Mdialog.setOnDismissListener(onDialogResultListener);
+
+
+
+				Mdialog.show();
+				Mdialog.setTitle(TitleId);
+				Mdialog.setMessage(MessageId);
+				Mdialog.SetLogo(LogoResourcesID);
+		}
+
+
+	}
+
+	public static void InputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
+		inputBox Mdialog;
+		Mdialog= new inputBox(context,inputType);
+		Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+		Mdialog.show();
+		Mdialog.setTitle(Title);
+		Mdialog.setMessage(Message);
+		Mdialog.setValueHint(ValueHint);
+		Mdialog.SetValue(DefaultValue);
+		return;
+
+	}
+	public static void InputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId,String DefaultValue, int inputType,  Context context, inputBox.OnDialogResultListener onDialogResultListener ){
+		inputBox Mdialog;
+		Mdialog= new inputBox(context,inputType);
+		Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+		Mdialog.show();
+		Mdialog.setTitle(TitleId);
+		Mdialog.setMessage(MessageId);
+		Mdialog.setValueHint(ValueHintId);
+		Mdialog.SetValue(DefaultValue);
+		return;
+
+
+
+	}
+	public static void InputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType,@DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
+		inputBox Mdialog;
+		Mdialog= new inputBox(context,inputType);
+		Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+		Mdialog.show();
+		Mdialog.setTitle(Title);
+		Mdialog.setMessage(Message);
+		Mdialog.setValueHint(ValueHint);
+		Mdialog.SetValue(DefaultValue);
+		Mdialog.SetLogo(LogoResourcesID);
+		return;
+
+	}
+	public static void InputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId, String DefaultValue, int inputType, @DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener ){
+		inputBox Mdialog;
+		Mdialog= new inputBox(context,inputType);
+		Mdialog.setOnDialogResultListener(onDialogResultListener);
+
+
+
+		Mdialog.show();
+		Mdialog.setTitle(TitleId);
+		Mdialog.setMessage(MessageId);
+		Mdialog.setValueHint(ValueHintId);
+		Mdialog.SetValue(DefaultValue);
+		Mdialog.SetLogo(LogoResourcesID);
+		return;
+
+
+
+	}
+
 }

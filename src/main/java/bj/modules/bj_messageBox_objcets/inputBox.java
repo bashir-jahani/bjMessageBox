@@ -1,4 +1,4 @@
-package bj.modules.bj_objcets;
+package bj.modules.bj_messageBox_objcets;
 
 
 import android.app.Dialog;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 
-public class bj_inputBox extends Dialog {
+public class inputBox extends Dialog {
     TextView TXVMessage,TXVTitle;
     EditText EDTValue;
     Button BTNOK,BTNCancel;
@@ -25,7 +25,7 @@ public class bj_inputBox extends Dialog {
     int mInputType;
     public static Boolean DResult=false;
     public static String VResult="";
-    public bj_inputBox(Context context, int inputType) {
+    public inputBox(Context context, int inputType) {
         super(context);
         mContext=context;
         mInputType=inputType;
