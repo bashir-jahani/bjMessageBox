@@ -517,6 +517,14 @@ public class bj_messageBox {
 	public static void MessageBoxAsAttention(String AttentionMessage,Context context){
 		MessageBox(context.getString(R.string.Title_Attention),AttentionMessage, BJMessagesButtonKind.Ok,context,null);
 	}
+
+	public static void MessageBoxAsError(String ErrMessage,Context context, messageBox.OnDialogResultListener onDialogResultListener){
+		MessageBox(context.getString(R.string.Title_Error),ErrMessage, BJMessagesButtonKind.Ok,context,onDialogResultListener);
+	}
+	public static void MessageBoxAsAttention(String AttentionMessage,Context context, messageBox.OnDialogResultListener onDialogResultListener){
+		MessageBox(context.getString(R.string.Title_Attention),AttentionMessage, BJMessagesButtonKind.Ok,context,onDialogResultListener);
+	}
+
 	public static void MessageBoxWithSelectableListView(String Title, String Message, @DrawableRes int LogoResourcesID, ArrayList<bj_messageBox_classes.BJSimpleListViewInfo> Items, Boolean EnableMultiSellect, Context context, messageBoxWithSelectableList.OnDialogWithSelectableListResultListener onDialogResultListener){
 		messageBoxWithSelectableList Mdialog;
 		Mdialog= new messageBoxWithSelectableList(context,EnableMultiSellect);
