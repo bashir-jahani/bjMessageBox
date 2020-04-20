@@ -48,7 +48,11 @@ public class messageBoxWithSelectableList extends Dialog {
 
     }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        dismiss();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,7 +176,7 @@ public class messageBoxWithSelectableList extends Dialog {
     }
 
     public void SetLogo( @DrawableRes int LogoResourcesID) {
-        Log.e("GGN",LogoResourcesID+"");
+        Log.e("bj modules",LogoResourcesID+"");
         IMGLogo.setImageResource(LogoResourcesID);
         IMGLogo.setVisibility(View.VISIBLE);
     }

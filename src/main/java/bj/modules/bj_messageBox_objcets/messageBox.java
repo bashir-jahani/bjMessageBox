@@ -22,6 +22,13 @@ public class messageBox extends Dialog {
     TextView TXVMessage,TXVTitle;
     Button BTNOK,BTNCancel,BTNYes,BTNNo;
     ImageView IMGLogo;
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        dismiss();
+    }
+
     Context mContext;
     static int PRS_Button;
 
@@ -127,7 +134,7 @@ public class messageBox extends Dialog {
     }
 
     public void SetLogo( @DrawableRes int LogoResourcesID) {
-        Log.e("GGN",LogoResourcesID+"");
+        Log.e("bj modules",LogoResourcesID+"");
         IMGLogo.setImageResource(LogoResourcesID);
         IMGLogo.setVisibility(View.VISIBLE);
     }

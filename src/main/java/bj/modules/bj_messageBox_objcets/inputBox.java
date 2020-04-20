@@ -4,6 +4,8 @@ package bj.modules.bj_messageBox_objcets;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -13,10 +15,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
 public class inputBox extends Dialog {
+    int TitlbarBackground;
     TextView TXVMessage,TXVTitle;
     EditText EDTValue;
     Button BTNOK,BTNCancel;
@@ -31,7 +37,11 @@ public class inputBox extends Dialog {
         mInputType=inputType;
 
     }
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        dismiss();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +58,8 @@ public class inputBox extends Dialog {
         IMGLogo=(ImageView) findViewById(R.id.GIB_Logo);
        EDTValue.setInputType(mInputType);
 
-        //Log.e("GGN",EDTValue.getInputType()+"");
+
+        //Log.e("bj modules",EDTValue.getInputType()+"");
         BTNOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +88,30 @@ public class inputBox extends Dialog {
 
 
     }
+    public inputBox setTitleBarBackground(Drawable drawable){
+        if (drawable==null) {
+            TXVTitle.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
+        }else {
+            TXVTitle.setBackground(drawable);
+        }
+
+        return inputBox.this;
+    }
+    public inputBox setTitleBarBackground(Integer resourcID){
+        TXVTitle.setBackgroundResource(resourcID);
+
+        return inputBox.this;
+    }
+    public inputBox setTitleBarBackgroundColor(@ColorInt Integer color){
+        if (color==null) {
+            TXVTitle.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
+        }else {
+            TXVTitle.setBackgroundColor(color);
+        }
+
+        return inputBox.this;
+    }
+
 
     @Override
     public void setTitle( CharSequence title) {

@@ -1,13 +1,16 @@
 package bj.modules;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -49,8 +52,14 @@ public class bj_messageBox {
 			TView= LayoutInflater.from(context).inflate(R.layout.dialog_item, null);
 			IView=LayoutInflater.from(context).inflate(R.layout.dialog_alert_layout, null);
 			((TextView) TView. findViewById(R.id.tv1)).setText(DialogTitle);
-			((TextView) TView. findViewById(R.id.tv1)).setTextColor(context.getColor(R.color.colorPrimaryDark));
-			TView.setBackgroundColor(context.getColor(R.color.white_overlay));
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+				((TextView) TView. findViewById(R.id.tv1)).setTextColor(context.getColor(R.color.colorPrimaryDark));
+				TView.setBackgroundColor(context.getColor(R.color.white_overlay));
+			}else {
+				((TextView) TView. findViewById(R.id.tv1)).setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+				TView.setBackgroundColor(context.getResources().getColor(R.color.white_overlay));
+			}
+
 			((ImageView) TView. findViewById(R.id.iv1)).setImageResource(IconResID);
 			setCustomTitle(TView);
 			mItems=items;
@@ -731,7 +740,7 @@ public class bj_messageBox {
 
 	}
 
-	public static void InputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
+	public static inputBox InputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
 		inputBox Mdialog;
 		Mdialog= new inputBox(context,inputType);
 		Mdialog.setOnDialogResultListener(onDialogResultListener);
@@ -743,10 +752,12 @@ public class bj_messageBox {
 		Mdialog.setMessage(Message);
 		Mdialog.setValueHint(ValueHint);
 		Mdialog.SetValue(DefaultValue);
-		return;
+		Window window = Mdialog.getWindow();
+		window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		return Mdialog;
 
 	}
-	public static void InputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId,String DefaultValue, int inputType,  Context context, inputBox.OnDialogResultListener onDialogResultListener ){
+	public static inputBox InputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId,String DefaultValue, int inputType,  Context context, inputBox.OnDialogResultListener onDialogResultListener ){
 		inputBox Mdialog;
 		Mdialog= new inputBox(context,inputType);
 		Mdialog.setOnDialogResultListener(onDialogResultListener);
@@ -758,12 +769,14 @@ public class bj_messageBox {
 		Mdialog.setMessage(MessageId);
 		Mdialog.setValueHint(ValueHintId);
 		Mdialog.SetValue(DefaultValue);
-		return;
+		Window window = Mdialog.getWindow();
+		window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		return Mdialog;
 
 
 
 	}
-	public static void InputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType,@DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
+	public static inputBox InputBox(String Title, String Message, String ValueHint,String DefaultValue , int inputType,@DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener  ){
 		inputBox Mdialog;
 		Mdialog= new inputBox(context,inputType);
 		Mdialog.setOnDialogResultListener(onDialogResultListener);
@@ -776,10 +789,12 @@ public class bj_messageBox {
 		Mdialog.setValueHint(ValueHint);
 		Mdialog.SetValue(DefaultValue);
 		Mdialog.SetLogo(LogoResourcesID);
-		return;
+		Window window = Mdialog.getWindow();
+		window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		return Mdialog;
 
 	}
-	public static void InputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId, String DefaultValue, int inputType, @DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener ){
+	public static inputBox InputBox(@StringRes int TitleId, @StringRes int MessageId, @StringRes int ValueHintId, String DefaultValue, int inputType, @DrawableRes int LogoResourcesID, Context context, inputBox.OnDialogResultListener onDialogResultListener ){
 		inputBox Mdialog;
 		Mdialog= new inputBox(context,inputType);
 		Mdialog.setOnDialogResultListener(onDialogResultListener);
@@ -792,7 +807,9 @@ public class bj_messageBox {
 		Mdialog.setValueHint(ValueHintId);
 		Mdialog.SetValue(DefaultValue);
 		Mdialog.SetLogo(LogoResourcesID);
-		return;
+		Window window = Mdialog.getWindow();
+		window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		return Mdialog;
 
 
 
