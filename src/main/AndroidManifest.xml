@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="bj.modules.bj_messageBox_objcets">
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.TYPE_APPLICATION_OVERLAY" />
 </manifest>

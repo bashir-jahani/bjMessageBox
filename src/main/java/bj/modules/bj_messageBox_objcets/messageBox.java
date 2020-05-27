@@ -4,10 +4,12 @@ package bj.modules.bj_messageBox_objcets;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,14 +31,14 @@ public class messageBox extends Dialog {
         dismiss();
     }
 
-    Context mContext;
+
     static int PRS_Button;
 
     Boolean mShowOK,  mShowCancel,  mShowYes,  mShowNO;
     public static Boolean result=false;
     public messageBox(Context context, Boolean ShowCancel, Boolean ShowOK, Boolean ShowYes, Boolean ShowNO) {
         super(context);
-        mContext=context;
+
         mShowOK=ShowOK;
         mShowCancel=ShowCancel;
         mShowYes=ShowYes;
@@ -48,8 +50,10 @@ public class messageBox extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+
         result=false;
         setContentView(R.layout.g_message_box);
+
         TXVTitle=(TextView)findViewById(R.id.GDA_TXV_Title);
         TXVMessage=(TextView)findViewById(R.id.GDA_TXV_Message);
         BTNCancel=(Button)findViewById(R.id.GDA_BTN_Cancel);
